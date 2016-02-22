@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Handlebars</title>
+
+
+</head>
+
+<body>
+
+	<div class="first">
+		<script id="address-template" type="text/x-handlebars-template">
+	  		<p>You can find me in {{city}}. My address is {{number}} {{street}}.</p>
+		</script>
+
+			<!--Your new content will be displayed in here-->
+			<div class="content-placeholder"></div>
+	</div>
+
+	<div class="second">
+		<script id="expressions-template" type="text/x-handlebars-template">
+			{{description.escaped}}
+			{{example}}
+
+			<br><br>
+
+			{{description.unescaped}}
+			{{{example}}}
+		</script>
+
+		<div class="main-placeholder"></div>
+	</div>
+
+
+	
+	<div class="third">
+		<script id="example-template" type="text/x-handlebars-template">
+			
+			{{#each people}}
+				<p>{{firstName}} {{lastName}}</p>
+			{{/each}}
+		</script>
+		
+	</div>
+
+	<div class="fourth">
+		<script id="built-in-helpers-template" type="text/x-handlebars-template">
+			{{#each animals}}
+				<p>
+					The {{capitalize this.name}} says
+					{{#if this.noise}}
+						"{{this.noise}}".
+					{{else}}
+						nothing since its a {{this.name}}.
+					{{/if}}
+				</p>
+			{{/each}}
+		</script>
+
+		<div class="fourth-placeholder"></div>
+		
+	</div>
+
+	<div class="fifth">
+		<script id="block-expressions-template" type="texy/x-handlebars-template">
+			<p> The <b> {{#uppercase}} konami {{/uppercase}} </b> Code is a cheat code that appears in many video games.</p>
+
+			<p> During the title screen before the game demo begins, the player could press the following  sequence of buttons on the game controller to enable the cheat:</p>
+
+			<p>{{#uppercase}}{{code}}{{/uppercase}}</p>
+		</script>
+
+		<div class="fifth"></div>
+		
+	</div>
+
+
+	<script src="jquery-1.11.3.min.js"></script>
+	<script src="handlebars-v4.0.5.js"></script>
+	<script src="main.js"></script>
+</body>
+</html>
